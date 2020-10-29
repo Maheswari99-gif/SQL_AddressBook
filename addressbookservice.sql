@@ -37,6 +37,13 @@ WHERE state = 'State A';
 #UC7
 SELECT city,COUNT(city) FROM address_book GROUP BY city;
 SELECT state,COUNT(state) FROM address_book GROUP BY state;
+#UC8
+INSERT INTO address_book VALUES
+( 'Mahi', 'Koyyani', 'House No.-1', 'City C','State C', '534260', '8639799558', 'mahi@email.com'),
+( 'Hari', 'Koyyani', 'House No.-2', 'City C','State C', '534260', '8539799563', 'hari@gmail.com'),
+( 'Sri', 'Koyyani', 'House No.-3', 'City C','State C', '534260', '8439799532', 'sri@gmail.com');
+SELECT * FROM address_book WHERE city = 'City C'
+ORDER BY first_name;
 
 
 
