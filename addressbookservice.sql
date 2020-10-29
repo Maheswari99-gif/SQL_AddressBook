@@ -44,6 +44,14 @@ INSERT INTO address_book VALUES
 ( 'Sri', 'Koyyani', 'House No.-3', 'City C','State C', '534260', '8439799532', 'sri@gmail.com');
 SELECT * FROM address_book WHERE city = 'City C'
 ORDER BY first_name;
+#UC9
+ALTER TABLE address_book ADD name VARCHAR(100);
+ALTER TABLE address_book ADD type VARCHAR(100);
+ALTER TABLE address_book ALTER type SET DEFAULT 'Friend';
+INSERT INTO address_book VALUES
+( 'Surya', 'Koyyani', 'House No.-5', 'City C','State C', '534250', '8638974457', 'surya@gmail.com','Surya Koyyani','Family'),
+( 'Priya', 'Dubai', 'House No.-8', 'City A','State A', '534240', '8508995688', 'priya@gmail.com','Priya Dubai','Friend');
+
 
 
 
