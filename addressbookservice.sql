@@ -34,6 +34,9 @@ SELECT * FROM address_book
 WHERE city = 'City D';
 SELECT * FROM address_book
 WHERE state = 'State A';
+#UC7
+SELECT city,COUNT(city) FROM address_book GROUP BY city;
+SELECT state,COUNT(state) FROM address_book GROUP BY state;
 
 
 
