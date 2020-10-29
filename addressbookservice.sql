@@ -29,6 +29,12 @@ WHERE first_name = 'Ambani' AND last_name = 'Mukesh';
 #UC5
 DELETE FROM address_book
 WHERE first_name = 'Mark';
+#UC6
+SELECT * FROM address_book
+WHERE city = 'City D';
+SELECT * FROM address_book
+WHERE state = 'State A';
+
 
 
 
