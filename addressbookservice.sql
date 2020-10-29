@@ -51,6 +51,9 @@ ALTER TABLE address_book ALTER type SET DEFAULT 'Friend';
 INSERT INTO address_book VALUES
 ( 'Surya', 'Koyyani', 'House No.-5', 'City C','State C', '534250', '8638974457', 'surya@gmail.com','Surya Koyyani','Family'),
 ( 'Priya', 'Dubai', 'House No.-8', 'City A','State A', '534240', '8508995688', 'priya@gmail.com','Priya Dubai','Friend');
+#UC10
+SELECT type, COUNT(first_name) FROM address_book GROUP BY type;
+
 
 
 
