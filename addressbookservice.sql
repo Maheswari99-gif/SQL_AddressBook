@@ -22,5 +22,9 @@ INSERT INTO address_book VALUES
 ( 'Mark', 'Zuckerberg', 'House No.-2', 'City B','State B', '345677', '2345678912', 'markzukerberg@email.com' ),
 ( 'Ambani', 'Mukesh', 'House No.-3', 'City C', 'State C', '986754', '3456789102', 'ambanimukesh@email.com' );
 SELECT * FROM address_book;
+#UC4
+UPDATE address_book
+SET city = 'City D'
+WHERE first_name = 'Ambani' AND last_name = 'Mukesh';
 
 
