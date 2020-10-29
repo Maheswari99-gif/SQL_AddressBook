@@ -26,5 +26,9 @@ SELECT * FROM address_book;
 UPDATE address_book
 SET city = 'City D'
 WHERE first_name = 'Ambani' AND last_name = 'Mukesh';
+#UC5
+DELETE FROM address_book
+WHERE first_name = 'Mark';
+
 
 
