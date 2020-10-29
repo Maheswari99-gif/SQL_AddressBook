@@ -53,6 +53,11 @@ INSERT INTO address_book VALUES
 ( 'Priya', 'Dubai', 'House No.-8', 'City A','State A', '534240', '8508995688', 'priya@gmail.com','Priya Dubai','Friend');
 #UC10
 SELECT type, COUNT(first_name) FROM address_book GROUP BY type;
+#UC11
+INSERT INTO address_book VALUES
+( 'Sravani', 'Vanama', 'House No.-2', 'City G','State G', '534200', '8675449007', 'sravani@gmail.com','Sravani Vanama','Family'),
+( 'Vaishnavi', 'Bhavaraju', 'House No.-3', 'City G','State G', '534200', '6759004322', 'vaishnavi@gmail.com','Vaishnavi Bhavaraju','Friend');
+
 
 
 
