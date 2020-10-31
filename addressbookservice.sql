@@ -57,6 +57,74 @@ SELECT type, COUNT(first_name) FROM address_book GROUP BY type;
 INSERT INTO address_book VALUES
 ( 'Sravani', 'Vanama', 'House No.-2', 'City G','State G', '534200', '8675449007', 'sravani@gmail.com','Sravani Vanama','Family'),
 ( 'Vaishnavi', 'Bhavaraju', 'House No.-3', 'City G','State G', '534200', '6759004322', 'vaishnavi@gmail.com','Vaishnavi Bhavaraju','Friend');
+#Usecase13
+create table contact (
+    contact_id int unsigned not null,
+    first_name varchar(20) not null,
+    last_name varchar(20) not null,
+    address varchar(50) not null,
+    city varchar(20) not null,
+    state varchar(20) not null,
+    zip int unsigned not null,
+    phone_number varchar(10) not null,
+    email_id varchar(30) not null,
+    primary key (contact_id)
+);
+
+create table address_book_name (
+    book_id int unsigned not null,
+    book_name varchar(20) not null,
+    primary key (book_id)
+);
+
+create table address_book_type (
+    type_id int unsigned not null,
+    type_name varchar(20) not null,
+    primary key (type_id)
+);
+
+create table address_book(
+    contact_id int unsigned not null,
+    book_id int unsigned not null,
+    type_id int unsigned not null,
+    foreign key (contact_id) references contact (contact_id),
+    foreign key (book_id) references address_book_name (book_id),
+    foreign key (type_id) references address_book_type (type_id)
+);
+
+insert into contact values
+(1, 'Keerthi','Guntupalli','AP','Hyderabad','AP',123456,12345678,'keerthi@gmail.com'),
+(2, 'Sushma','Anumala','AP','Secundarabad','AP',224567,864568935,'sushma@gmail.com'),
+(3, 'Sravya','Ammu','AP','Hyderabad','AP',455678,863568900,'sravya@gmail.com'),
+(4, 'Sravani','Balla','AP','Kurnool','AP',456780,567889943,'sravani@gmail.com'),
+(5, 'Manasa','Kakumanu','AP','Waranga','AP',349423,908765432,'manasa@gmail.com');
+
+insert into address_book_name values
+(101, 'myContacts'),
+(102, 'officialContacts');
+
+insert into address_book_type values
+(50, 'Family'),
+(51, 'Friend'),
+(52, 'Professional');
+
+insert into address_book values
+(1,101,50),
+(2,101,51),
+(3,101,50),
+(4,101,50),
+(5,102,52);
+
+select * from contact where city = 'Hyderabad' or state = 'AP';
+
+select city, count(contact_id) from contact group by city;
+select state, count(contact_id) from contact group by state;
+
+select * from contact where city = 'Waranga'order by first_name;
+
+select address_book_type.type_name, count(dictionary.contact_id) from address_book
+join address_book_type on address_book_type.type_id = address_book.type_id
+group by address_book.type_id;
 
 
 
